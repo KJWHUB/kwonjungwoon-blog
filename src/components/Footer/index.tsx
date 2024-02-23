@@ -1,9 +1,11 @@
-import * as React from 'react';
+import React from 'react';
+
+import { footer } from './style.module.scss';
 
 const Footer = () => {
   return (
-    <footer>
-      <h1>footer</h1>
+    <footer className={footer}>
+      <p>© 2023 Kwon Jungwoon. All rights reserved.</p>
     </footer>
   );
 };

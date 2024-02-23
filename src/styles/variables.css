@@ -1,0 +1,6 @@
+[data-theme='light'] {
+  --header-bg-color: #f0f0f0;
+}
+[data-theme='dark'] {
+  --header-bg-color: #333;
+}

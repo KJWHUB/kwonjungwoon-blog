@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 
-import { style } from './style.module.scss';
-
-const { header } = style;
+import { header } from './style.module.scss';
+import ThemeToggle from '../ThemeToggle';
 
 const Logo = () => {
   return <h1>Logo</h1>;
@@ -10,8 +9,9 @@ const Logo = () => {
 
 const Header = () => {
   return (
-    <header style={header}>
+    <header className={header}>
       <Logo />
+      <ThemeToggle />
     </header>
   );
 };
