@@ -1,6 +1,8 @@
 [data-theme='light'] {
   --header-bg-color: #f0f0f0;
+  --header-text-color: #161616;
 }
 [data-theme='dark'] {
   --header-bg-color: #333;
+  --header-text-color: #fff;
 }
