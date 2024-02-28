@@ -1,11 +1,17 @@
-import type { HeadFC, PageProps } from 'gatsby';
+import type { HeadFC } from 'gatsby';
 import React from 'react';
 
-const CategoryPage: React.FC<PageProps> = () => {
+import Layout from '../layout';
+
+type CategoryProps = {
+  location: Location;
+};
+
+const CategoryPage: React.FC<CategoryProps> = ({ location }) => {
   return (
-    <main>
+    <Layout location={location}>
       <h1>CategoryPage</h1>
-    </main>
+    </Layout>
   );
 };
 

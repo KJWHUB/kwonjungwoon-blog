@@ -7,6 +7,8 @@
   --header-text-color: #161616;
   --header-menu-hover-bg-color: #f1f3f4;
   --header-border-color: rgba(0, 0, 0, 0.05);
+
+  --footer-border-color: rgba(0, 0, 0, 0.05);
 }
 [data-theme='dark'] {
   --body-background-color: #191c1e;
@@ -17,4 +19,6 @@
   --header-text-color: #fff;
   --header-menu-hover-bg-color: #303135;
   --header-border-color: rgba(255, 255, 255, 0.05);
+
+  --footer-border-color: rgba(255, 255, 255, 0.05);
 }

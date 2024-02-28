@@ -1,14 +1,20 @@
-import type { HeadFC, PageProps } from 'gatsby';
+import type { HeadFC } from 'gatsby';
 import React from 'react';
 
-const IndexPage: React.FC<PageProps> = () => {
+import Layout from '../layout';
+
+type AboutProps = {
+  location: Location;
+};
+
+const AboutPage: React.FC<AboutProps> = ({ location }) => {
   return (
-    <main>
+    <Layout location={location}>
       <h1>About Page</h1>
-    </main>
+    </Layout>
   );
 };
 
-export default IndexPage;
+export default AboutPage;
 
 export const Head: HeadFC = () => <title>About Page</title>;

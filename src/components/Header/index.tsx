@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import { Frame, Github } from 'lucide-react';
+import { Github, Squirrel } from 'lucide-react';
 import React from 'react';
 
 import ThemeToggle from '../ThemeToggle';
@@ -8,7 +8,7 @@ import { header, headerWrap, listItem, listWrap } from './style.module.scss';
 const Logo = () => {
   return (
     <h1>
-      <Frame />
+      <Squirrel />
     </h1>
   );
 };
