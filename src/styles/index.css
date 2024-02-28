@@ -1,2 +1,4 @@
+@import './_reset.scss';
+@import './font.css';
 @import './variables.css';
-@import './global.css';
+@import './global.scss';

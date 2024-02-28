@@ -1,8 +1,20 @@
 [data-theme='light'] {
-  --header-bg-color: #f0f0f0;
+  --body-background-color: #fff;
+
+  --default-text-color: #161616;
+
+  --header-bg-color: #fff;
   --header-text-color: #161616;
+  --header-menu-hover-bg-color: #f1f3f4;
+  --header-border-color: rgba(0, 0, 0, 0.05);
 }
 [data-theme='dark'] {
-  --header-bg-color: #333;
+  --body-background-color: #191c1e;
+
+  --default-text-color: #fff;
+
+  --header-bg-color: #191c1e;
   --header-text-color: #fff;
+  --header-menu-hover-bg-color: #303135;
+  --header-border-color: rgba(255, 255, 255, 0.05);
 }

@@ -1,11 +1,15 @@
-import type { HeadFC, PageProps } from 'gatsby';
+import type { HeadFC } from 'gatsby';
 import React from 'react';
 
 import Layout from '../layout';
 
-const IndexPage: React.FC<PageProps> = () => {
+type HomeProps = {
+  location: Location;
+};
+
+const IndexPage: React.FC<HomeProps> = ({ location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <h1>Home Page</h1>
     </Layout>
   );

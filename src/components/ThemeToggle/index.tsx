@@ -1,8 +1,7 @@
+import { Moon, Sun } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
-import { Moon, Sun } from 'lucide-react';
-
-import './index.css';
+import { themeToggle } from './index.module.css';
 
 type Theme = 'light' | 'dark';
 
@@ -40,7 +39,7 @@ const ThemeToggle = () => {
     setLocalstorageTheme(theme);
   }, [theme]);
   return (
-    <button title='Toggles light & dark' onClick={handleClick} className='theme-toggle'>
+    <button title='Toggles light & dark' onClick={handleClick} className={themeToggle}>
       {theme === 'light' ? <Sun strokeWidth={1.75} /> : <Moon strokeWidth={1.75} />}
     </button>
   );

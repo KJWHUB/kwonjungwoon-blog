@@ -1,4 +1,6 @@
-.header {
+$hover-duration: 0.3s;
+
+.headerWrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,6 +9,51 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--header-bg-color);
+  filter: blur(10%);
   z-index: 100;
+
+  border-bottom: 1px solid var(--header-border-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.list-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-item {
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 10px;
+
+  transition: background-color $hover-duration ease-in-out;
+
+  & > a,
+  button {
+    color: var(--header-text-color);
+    opacity: 0.8;
+
+    transition: all $hover-duration ease-in-out;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: var(--header-menu-hover-bg-color);
+
+    & > a,
+    button {
+      opacity: 1;
+    }
+  }
 }

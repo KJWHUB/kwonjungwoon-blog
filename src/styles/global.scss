@@ -1,0 +1,11 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  color: var(--default-text-color);
+  font-family: 'Pretendard';
+
+  background-color: var(--body-background-color);
+  transition: background-color 0.3s;
+}
