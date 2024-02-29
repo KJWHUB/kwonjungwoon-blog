@@ -2,7 +2,7 @@
 title: '테스트 글 작성'
 description: '테스트 설명 입니다.'
 date: '2024-02-20'
-tags: ['set', 'first']
+tag: ['set', 'first']
 post_image: './milad-fakurian-c10tq-bB52Y-unsplash.jpg'
 post_image_alt: '대체 텍스트'
 post_image_credit_text: 'Milad Fakurian'

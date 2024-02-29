@@ -40,7 +40,7 @@ export const query = graphql`
             date(formatString: "YYYY-MM-DD")
             title
             description
-            tags
+            tag
             post_image {
               childImageSharp {
                 gatsbyImageData

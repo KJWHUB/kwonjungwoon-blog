@@ -2,7 +2,7 @@
 title: '새로운 포스트: 인공지능의 미래'
 description: '인공지능은 우리 삶의 다양한 측면에 영향을 미치고 있으며 앞으로 더욱 그 영향력이 커질 것으로 예상됩니다. 인공지능은 의료, 교육, 금융, 제조 등 다양한 분야에서 활용되고 있으며 새로운 가능성을 열어주고 있습니다.'
 date: '2024-02-27'
-tags: ['set', 'first']
+tag: ['set', 'first']
 post_image: './igor-omilaev-eGGFZ5X2LnA-unsplash.jpg'
 post_image_alt: '대체 텍스트'
 post_image_credit_text: 'Igor Omilaev'

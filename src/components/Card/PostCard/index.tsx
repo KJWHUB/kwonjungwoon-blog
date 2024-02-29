@@ -20,6 +20,7 @@ const PostCard = ({ title, description, date, image }: PostCardProps) => {
           {!image && <StaticImage src='/src/assets/images/annie-spratt-yI3weKNBRTc-unsplash.jpg' alt='Post image' />}
         </Link>
       </div>
+
       <h2 className={postCardTitle}>{title}</h2>
       <p className={postCardDescription}>{description}</p>
       <time dateTime={date} className={postCardDate}>
