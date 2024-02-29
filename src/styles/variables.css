@@ -9,6 +9,9 @@
   --header-border-color: rgba(0, 0, 0, 0.05);
 
   --footer-border-color: rgba(0, 0, 0, 0.05);
+
+  --post-card-image-border-color: hsl(230 25% 94%);
+  --post-card-description-color: rgb(48 58 62);
 }
 [data-theme='dark'] {
   --body-background-color: #191c1e;
@@ -21,4 +24,7 @@
   --header-border-color: rgba(255, 255, 255, 0.05);
 
   --footer-border-color: rgba(255, 255, 255, 0.05);
+
+  --post-card-image-border-color: hsl(230 6% 23%);
+  --post-card-description-color: #768086;
 }
