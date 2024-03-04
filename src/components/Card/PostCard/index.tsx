@@ -9,15 +9,16 @@ type PostCardProps = {
   description: string;
   date: string;
   image?: IGatsbyImageData;
+  detailPath: string;
 };
 
-const PostCard = ({ title, description, date, image }: PostCardProps) => {
+const PostCard = ({ title, description, date, image, detailPath }: PostCardProps) => {
   return (
     <article className={postCard}>
       <div className={postCardImage}>
-        <Link to='/' style={{ display: 'block', width: '100%', height: '100%' }}>
+        <Link to={`/post${detailPath}`} style={{ display: 'block', width: '100%', height: '100%' }}>
           {image && <GatsbyImage image={image} alt='Post image' objectFit='cover' style={{ height: '100%' }} />}
-          {!image && <StaticImage src='/src/assets/images/annie-spratt-yI3weKNBRTc-unsplash.jpg' alt='Post image' />}
+          {!image && <StaticImage src='../../../assets/images/post-card-default.jpg' alt='Post image' />}
         </Link>
       </div>
 

@@ -1,16 +1,12 @@
 import { Link } from 'gatsby';
-import { Github, Squirrel } from 'lucide-react';
+import { Github } from 'lucide-react';
 import React from 'react';
 
 import ThemeToggle from '../ThemeToggle';
 import { header, headerWrap, listItem, listWrap } from './style.module.scss';
 
 const Logo = () => {
-  return (
-    <h1>
-      <Squirrel />
-    </h1>
-  );
+  return <h1>Blog</h1>;
 };
 
 const NavigationWrap = () => {
