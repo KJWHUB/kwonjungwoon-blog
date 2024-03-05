@@ -2,5 +2,9 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  color: var(--header-text-color);
+  opacity: 0.8;
+
   transition: color 0.5s ease;
 }

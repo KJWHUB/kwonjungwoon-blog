@@ -5,15 +5,11 @@ import React from 'react';
 import ThemeToggle from '../ThemeToggle';
 import { header, headerWrap, listItem, listWrap } from './style.module.scss';
 
-const Logo = () => {
-  return <h1>Blog</h1>;
-};
-
 const NavigationWrap = () => {
   const routes = [
     {
       path: '/',
-      icon: <Logo />,
+      name: 'Blog',
     },
     {
       name: 'About',
@@ -28,8 +24,10 @@ const NavigationWrap = () => {
     <nav>
       <ul className={listWrap}>
         {routes.map((route) => (
-          <li key={route.path} className={listItem}>
-            <Link to={route.path}>{route.name || route.icon}</Link>
+          <li key={route.path}>
+            <Link to={route.path} className={listItem}>
+              {route.name}
+            </Link>
           </li>
         ))}
       </ul>
@@ -41,12 +39,12 @@ const AddOnMenu = () => {
   return (
     <menu>
       <ul className={listWrap}>
-        <li className={listItem}>
+        <li>
           <a href='https://github.com/KJWHUB' target='_blank' rel='noreferrer noopener'>
             <Github />
           </a>
         </li>
-        <li className={listItem}>
+        <li>
           <ThemeToggle />
         </li>
       </ul>

@@ -36,13 +36,10 @@ $hover-duration: 0.3s;
 
   transition: background-color $hover-duration ease-in-out;
 
-  & > a,
-  button {
-    color: var(--header-text-color);
-    opacity: 0.8;
+  color: var(--header-text-color);
+  opacity: 0.8;
 
-    transition: all $hover-duration ease-in-out;
-  }
+  transition: all $hover-duration ease-in-out;
 
   &:last-child {
     margin-right: 0;
@@ -51,9 +48,6 @@ $hover-duration: 0.3s;
   &:hover {
     background-color: var(--header-menu-hover-bg-color);
 
-    & > a,
-    button {
-      opacity: 1;
-    }
+    opacity: 1;
   }
 }
