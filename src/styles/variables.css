@@ -13,6 +13,9 @@
   --post-card-image-border-color: hsl(230 25% 94%);
   --post-card-image-dim-color: #000;
   --post-card-description-color: rgb(48 58 62);
+
+  --post-hr-color: #3b4049;
+  --post-image-cradit-text-color: #768086;
 }
 [data-theme='dark'] {
   --body-background-color: #191c1e;
@@ -29,4 +32,7 @@
   --post-card-image-border-color: hsl(230 6% 23%);
   --post-card-image-dim-color: #fff;
   --post-card-description-color: #768086;
+
+  --post-hr-color: #e4eaed;
+  --post-image-cradit-text-color: #768086;
 }

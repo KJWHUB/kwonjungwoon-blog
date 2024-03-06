@@ -1,4 +1,5 @@
 @import './_reset.scss';
+@import './_markdown.scss';
 @import './font.css';
 @import './variables.css';
 @import './global.scss';

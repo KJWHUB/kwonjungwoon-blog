@@ -16,8 +16,8 @@ const NavigationWrap = () => {
       path: '/about',
     },
     {
-      name: 'Category',
-      path: '/category',
+      name: 'Tags',
+      path: '/tags',
     },
   ];
   return (
@@ -58,7 +58,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ location }) => {
   // const { pathname } = location;
-  console.log('aaa', location);
+  console.log('header location', location);
   return (
     <div className={headerWrap}>
       <header className={header}>

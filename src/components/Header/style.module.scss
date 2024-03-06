@@ -9,7 +9,8 @@ $hover-duration: 0.3s;
   position: fixed;
   top: 0;
   left: 0;
-  filter: blur(10%);
+  backdrop-filter: saturate(180%) blur(20px);
+
   z-index: 100;
 
   border-bottom: 1px solid var(--header-border-color);
@@ -20,7 +21,7 @@ $hover-duration: 0.3s;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
 .list-wrap {
