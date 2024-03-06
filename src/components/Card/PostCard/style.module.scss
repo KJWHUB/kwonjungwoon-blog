@@ -1,4 +1,5 @@
 $text-margin: 10px;
+$img-hover-transition: all 0.3s ease 0s;
 
 .post-card {
   position: relative;
@@ -8,12 +9,35 @@ $text-margin: 10px;
   overflow: hidden;
 }
 
-.post-card-image {
+.post-card-image-wrap {
   overflow: hidden;
   height: 200px;
 
   border: 1px solid var(--post-card-image-border-color);
   border-radius: 12px;
+}
+
+.post-card-image {
+  transition: all 0.7s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: var(--post-card-image-dim-color);
+    transition: $img-hover-transition;
+  }
+  &:hover {
+    transform: scale(1.05);
+    &::after {
+      opacity: 0.1;
+    }
+  }
 }
 
 .post-card-title {
