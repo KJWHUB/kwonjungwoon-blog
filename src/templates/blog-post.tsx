@@ -5,7 +5,7 @@ import React from 'react';
 import PostHeader from '../components/PostHeader';
 import Layout from '../layout';
 
-const BlogPostTemplate = ({ data }: PageProps<Queries.PostDetailQuery>) => {
+const BlogPostTemplate = ({ location, data }: PageProps<Queries.PostDetailQuery>) => {
   console.log('template props data', data);
   const curPost = data.cur;
 

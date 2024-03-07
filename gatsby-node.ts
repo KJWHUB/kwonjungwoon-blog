@@ -2,7 +2,57 @@ import type { Actions, GatsbyNode } from 'gatsby';
 import { createFilePath } from 'gatsby-source-filesystem';
 import path from 'path';
 
-type qCPQ = Queries.CreatePostQuery;
+import { chageTagToPath } from './src/utils/path';
+
+type qCPQ = Queries.CreatePageQuery;
+
+const createTags = ({
+  createPage,
+  edges,
+}: {
+  createPage: Actions['createPage'];
+  edges: qCPQ['allMarkdownRemark']['edges'];
+}) => {
+  const tagsTemplate = path.resolve(`./src/templates/Tags/index.tsx`);
+  const tagTemplate = path.resolve(`./src/templates/Tag/index.tsx`);
+
+  const tagData = edges.reduce(
+    (acc, { node }) => {
+      const tags = node?.frontmatter?.tag || [];
+      tags.forEach((tag: string | null) => {
+        if (tag !== null) {
+          if (acc[tag]) {
+            acc[tag] += 1;
+          } else {
+            acc[tag] = 1;
+          }
+        }
+      });
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
+
+  createPage({
+    path: `/tags`,
+    component: tagsTemplate,
+    context: {
+      tagData,
+    },
+  });
+
+  Object.entries(tagData).forEach(([tag, count]) => {
+    const slug = chageTagToPath(tag);
+    createPage({
+      path: `/tags/${slug}`,
+      component: tagTemplate,
+      context: {
+        tagName: tag,
+        postLength: count,
+      },
+    });
+  });
+};
 
 const createPost = ({
   createPage,
@@ -29,7 +79,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   const { createPage } = actions;
 
   const result = await graphql<qCPQ>(`
-    query CreatePost {
+    query CreatePage {
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         edges {
           node {
@@ -41,6 +91,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
             frontmatter {
               title
               date(formatString: "YYYY.MM.DD")
+              tag
             }
           }
         }
@@ -54,6 +105,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   }
 
   createPost({ createPage, edges: result.data.allMarkdownRemark.edges });
+  createTags({ createPage, edges: result.data.allMarkdownRemark.edges });
 };
 
 export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions, getNode }) => {
