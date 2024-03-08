@@ -1,7 +1,8 @@
 import { graphql, type HeadFC, type PageProps } from 'gatsby';
 import React from 'react';
 
-import PostCard from '../components/Card/PostCard';
+import PostCardList from '@/src/components/List/PostCardList';
+
 import Layout from '../layout';
 
 const IndexPage = ({ location, data }: PageProps<Queries.PostListQuery>) => {
@@ -11,22 +12,7 @@ const IndexPage = ({ location, data }: PageProps<Queries.PostListQuery>) => {
     <Layout location={location}>
       <h1 style={{ margin: '200px 0' }}>Home Page</h1>
 
-      <ul style={{ display: 'flex' }}>
-        {list.map((item) => {
-          const { id, frontmatter, fields } = item.node;
-          return frontmatter ? (
-            <li key={id} style={{ width: '33%' }}>
-              <PostCard
-                title={frontmatter.title || 'No Title'}
-                description={frontmatter.description || 'No Description'}
-                date={frontmatter.date || 'No Date'}
-                image={frontmatter.post_image?.childImageSharp?.gatsbyImageData}
-                detailPath={fields?.slug || '/'}
-              />
-            </li>
-          ) : null;
-        })}
-      </ul>
+      <PostCardList list={list} />
     </Layout>
   );
 };

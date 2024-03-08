@@ -1,6 +1,8 @@
 import { graphql, type PageProps } from 'gatsby';
 import React from 'react';
 
+import PostCardList from '@/src/components/List/PostCardList';
+
 import Layout from '../../layout';
 
 type TagTemplateProps = {
@@ -18,6 +20,10 @@ const TagTemplate = ({ location, pageContext, data }: TagTemplateProps) => {
     <Layout location={location}>
       <h1>{tagName}</h1>
       <p>post {postLength}</p>
+
+      <hr />
+
+      <PostCardList list={data.allMarkdownRemark.edges} />
     </Layout>
   );
 };
@@ -25,21 +31,23 @@ const TagTemplate = ({ location, pageContext, data }: TagTemplateProps) => {
 export const query = graphql`
   query TagList($tagName: String) {
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }, filter: { frontmatter: { tag: { eq: $tagName } } }) {
-      nodes {
-        id
-        frontmatter {
-          date(formatString: "YYYY-MM-DD")
-          title
-          description
-          tag
-          post_image {
-            childImageSharp {
-              gatsbyImageData
+      edges {
+        node {
+          id
+          frontmatter {
+            date(formatString: "YYYY-MM-DD")
+            title
+            description
+            tag
+            post_image {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
-        }
-        fields {
-          slug
+          fields {
+            slug
+          }
         }
       }
     }
