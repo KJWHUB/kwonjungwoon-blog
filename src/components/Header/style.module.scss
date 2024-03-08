@@ -38,7 +38,7 @@ $hover-duration: 0.3s;
   transition: background-color $hover-duration ease-in-out;
 
   color: var(--header-text-color);
-  opacity: 0.8;
+  opacity: 0.7;
 
   transition: all $hover-duration ease-in-out;
 
@@ -51,4 +51,8 @@ $hover-duration: 0.3s;
 
     opacity: 1;
   }
+}
+
+.active {
+  opacity: 1;
 }

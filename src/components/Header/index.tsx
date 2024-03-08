@@ -2,22 +2,31 @@ import { Link } from 'gatsby';
 import { Github } from 'lucide-react';
 import React from 'react';
 
-import ThemeToggle from '../ThemeToggle';
-import { header, headerWrap, listItem, listWrap } from './style.module.scss';
+import { classNames } from '@/src/utils/className';
 
-const NavigationWrap = () => {
+import ThemeToggle from '../ThemeToggle';
+import { active, header, headerWrap, listItem, listWrap } from './style.module.scss';
+
+const isPathActive = (pathname: string, path: string) => {
+  if (path === '/') return pathname === path;
+  return pathname.includes(path);
+};
+
+const NavigationWrap = ({ location }: { location: Location }) => {
+  const { pathname } = location;
+  console.log('location', location);
   const routes = [
     {
-      path: '/',
       name: 'Blog',
+      path: '/',
     },
     {
       name: 'About',
-      path: '/about',
+      path: '/about/',
     },
     {
       name: 'Tags',
-      path: '/tags',
+      path: '/tags/',
     },
   ];
   return (
@@ -25,7 +34,7 @@ const NavigationWrap = () => {
       <ul className={listWrap}>
         {routes.map((route) => (
           <li key={route.path}>
-            <Link to={route.path} className={listItem}>
+            <Link to={route.path} className={classNames(listItem, isPathActive(pathname, route.path) ? active : null)}>
               {route.name}
             </Link>
           </li>
@@ -62,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ location }) => {
   return (
     <div className={headerWrap}>
       <header className={header}>
-        <NavigationWrap />
+        <NavigationWrap location={location} />
         <AddOnMenu />
       </header>
     </div>
