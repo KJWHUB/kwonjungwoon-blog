@@ -6,3 +6,12 @@
   border-top: 1px solid var(--footer-border-color);
   z-index: 100;
 }
+
+.scrollbar-true {
+  position: relative;
+}
+
+.scrollbar-false {
+  position: fixed;
+  bottom: 0;
+}
