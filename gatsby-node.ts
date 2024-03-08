@@ -4,6 +4,19 @@ import path from 'path';
 
 import { chageTagToPath } from './src/utils/path';
 
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ getConfig, actions }) => {
+  const output = getConfig().output || {};
+
+  actions.setWebpackConfig({
+    output,
+    resolve: {
+      alias: {
+        '@/src': path.resolve(__dirname, 'src/'),
+      },
+    },
+  });
+};
+
 type qCPQ = Queries.CreatePageQuery;
 
 const createTags = ({
