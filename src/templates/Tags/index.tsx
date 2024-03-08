@@ -3,7 +3,7 @@ import React from 'react';
 
 import Layout from '../../layout';
 import { chageTagToPath } from '../../utils/path';
-import { tagListWrapper } from './style.module.scss';
+import { tagListWrap } from './style.module.scss';
 
 type TagsTemplateProps = {
   pageContext: {
@@ -16,7 +16,7 @@ const TagsTemplate = ({ location, pageContext }: TagsTemplateProps) => {
   return (
     <Layout location={location}>
       <h1>TagsPage</h1>
-      <ul className={tagListWrapper}>
+      <ul className={tagListWrap}>
         {Object.entries(tagData).map(([tag, count]) => (
           <li key={tag}>
             <Link to={`/tags/${chageTagToPath(tag)}`}>
