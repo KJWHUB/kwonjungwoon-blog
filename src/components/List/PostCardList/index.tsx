@@ -12,7 +12,7 @@ const PostCardList = ({ list }: { list: ListType }) => {
       {list.map((item) => {
         const { id, frontmatter, fields } = item.node;
         return frontmatter ? (
-          <li key={id} style={{ width: '33%' }}>
+          <li key={id} style={{ flex: '1 1 300px' }}>
             <PostCard
               title={frontmatter.title || 'No Title'}
               description={frontmatter.description || 'No Description'}
