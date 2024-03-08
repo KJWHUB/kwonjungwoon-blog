@@ -16,6 +16,8 @@
 
   --post-hr-color: #3b4049;
   --post-image-cradit-text-color: #768086;
+
+  --tag-background--color: #f5f5f5;
 }
 [data-theme='dark'] {
   --body-background-color: #191c1e;
@@ -35,4 +37,6 @@
 
   --post-hr-color: #e4eaed;
   --post-image-cradit-text-color: #768086;
+
+  --tag-background--color: #282b31;
 }

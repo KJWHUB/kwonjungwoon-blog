@@ -2,8 +2,10 @@ import { graphql, type PageProps } from 'gatsby';
 import React from 'react';
 
 import PostCardList from '@/src/components/List/PostCardList';
+import PageTitle from '@/src/components/Typography/PageTitle';
 
 import Layout from '../../layout';
+import { searchPostText } from './style.module.scss';
 
 type TagTemplateProps = {
   pageContext: {
@@ -18,10 +20,10 @@ const TagTemplate = ({ location, pageContext, data }: TagTemplateProps) => {
   console.log('tag dtail', data);
   return (
     <Layout location={location}>
-      <h1>{tagName}</h1>
-      <p>post {postLength}</p>
-
-      <hr />
+      <div style={{ paddingTop: 100 }}>
+        <PageTitle text={tagName} />
+      </div>
+      <h2 className={searchPostText}>Search Post {postLength}</h2>
 
       <PostCardList list={data.allMarkdownRemark.edges} />
     </Layout>

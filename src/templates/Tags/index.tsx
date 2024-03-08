@@ -1,9 +1,11 @@
 import { Link, type PageProps } from 'gatsby';
 import React from 'react';
 
+import PageTitle from '@/src/components/Typography/PageTitle';
+
 import Layout from '../../layout';
 import { chageTagToPath } from '../../utils/path';
-import { tagListWrap } from './style.module.scss';
+import { tagListItem, tagListText, tagListWrap } from './style.module.scss';
 
 type TagsTemplateProps = {
   pageContext: {
@@ -15,11 +17,13 @@ const TagsTemplate = ({ location, pageContext }: TagsTemplateProps) => {
   const { tagData } = pageContext;
   return (
     <Layout location={location}>
-      <h1>TagsPage</h1>
+      <div style={{ padding: '100px 0' }}>
+        <PageTitle text='Tags' />
+      </div>
       <ul className={tagListWrap}>
         {Object.entries(tagData).map(([tag, count]) => (
-          <li key={tag}>
-            <Link to={`/tags/${chageTagToPath(tag)}`}>
+          <li key={tag} className={tagListItem}>
+            <Link to={`/tags/${chageTagToPath(tag)}`} className={tagListText}>
               {tag} ({count})
             </Link>
           </li>

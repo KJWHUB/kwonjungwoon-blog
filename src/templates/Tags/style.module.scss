@@ -2,3 +2,27 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.tag-list-item {
+  margin: 0.5rem;
+}
+
+.tag-list-text {
+  display: block;
+  padding: 0.6rem 1.2rem;
+
+  background-color: var(--tag-background--color);
+
+  border-radius: 7px;
+  border: 1px solid var(--post-card-image-border-color);
+
+  color: var(--default-text-color);
+  font-size: 1rem;
+
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px hsl(218 53% 10% / 0.12);
+  }
+}
