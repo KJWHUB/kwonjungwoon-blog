@@ -74,13 +74,13 @@ const createPost = ({
   createPage: Actions['createPage'];
   edges: qCPQ['allMarkdownRemark']['edges'];
 }) => {
-  const post = path.resolve(`./src/templates/blog-post.tsx`);
+  const postTemplate = path.resolve(`./src/templates/blog-post/index.tsx`);
 
   edges.forEach(({ node }) => {
     const slug = node?.fields?.slug;
     createPage({
       path: `/post${slug}`,
-      component: post,
+      component: postTemplate,
       context: {
         slug,
       },

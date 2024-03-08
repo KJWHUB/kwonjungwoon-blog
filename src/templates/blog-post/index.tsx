@@ -2,8 +2,8 @@ import { graphql, type PageProps } from 'gatsby';
 import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 
-import PostHeader from '../components/PostHeader';
-import Layout from '../layout';
+import PostHeader from '@/src/components/PostHeader';
+import Layout from '@/src/layout';
 
 const BlogPostTemplate = ({ location, data }: PageProps<Queries.PostDetailQuery>) => {
   console.log('template props data', data);

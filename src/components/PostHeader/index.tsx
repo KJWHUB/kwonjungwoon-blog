@@ -37,7 +37,7 @@ const PostHeader = ({
       <ul className={postHeaderTagList}>
         {tagList.map((tag) => (
           <li key={tag}>
-            <Link to={`/tag/${tag}`} className={postHeaderTagText}>
+            <Link to={`/tags/${tag}`} className={postHeaderTagText}>
               {tag}
             </Link>
           </li>
