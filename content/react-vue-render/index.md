@@ -3,10 +3,10 @@ title: 'React, Vue 의 렌더링'
 description: 'SPA 의 대표적인 툴들인 React 와 Vue 의 렌더링의 차이와 과정 에 대한 이야기'
 date: '2024-03-12'
 tag: ['React', 'Vue']
-post_image: './igor-omilaev-eGGFZ5X2LnA-unsplash.jpg'
+post_image: './original-b1864e0b2e914e7f7480edbdf60bef1e.png'
 post_image_alt: '대체 텍스트'
-post_image_credit_text: 'Igor Omilaev'
-post_image_credit_link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%AC%B8%EC%9E%90-a%EA%B0%80-%EC%9C%84%EC%97%90-%EC%9E%88%EB%8A%94-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%B9%A9-eGGFZ5X2LnA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
+post_image_credit_text: 'Adrian Fernandez'
+post_image_credit_link: 'https://dribbble.com/shots/20115776-Vue-x-React-Differences'
 ---
 
 인공지능은 우리 삶의 다양한 측면에 영향을 미치고 있으며 앞으로 더욱 그 영향력이 커질 것으로 예상됩니다. 인공지능은 의료, 교육, 금융, 제조 등 다양한 분야에서 활용되고 있으며 새로운 가능성을 열어주고 있습니다.

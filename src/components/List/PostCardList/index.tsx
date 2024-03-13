@@ -8,7 +8,7 @@ type ListType =
 
 const PostCardList = ({ list }: { list: ListType }) => {
   return (
-    <ul style={{ display: 'flex' }}>
+    <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
       {list.map((item) => {
         const { id, frontmatter, fields } = item.node;
         return frontmatter ? (
