@@ -63,9 +63,9 @@ $content-image-max-height: 560px;
 .markdown {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.5;
+  color: var(--markdown-font-color);
+  font-weight: 300;
   font-size: 16px;
-  font-weight: 500;
   line-height: 1.5;
   word-wrap: break-word;
 }
