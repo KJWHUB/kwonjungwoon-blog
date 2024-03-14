@@ -9,10 +9,13 @@ type ListType =
 const PostCardList = ({ list }: { list: ListType }) => {
   return (
     <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {list.map((item) => {
+      {list.map((item, index) => {
         const { id, frontmatter, fields } = item.node;
         return frontmatter ? (
-          <li key={id} style={{ flex: '1 1 300px' }}>
+          <li
+            key={id}
+            style={{ display: 'flex', flex: `1 1 ${index === 0 || index === list.length - 1 ? '100%' : '300px'}` }}
+          >
             <PostCard
               title={frontmatter.title || 'No Title'}
               description={frontmatter.description || 'No Description'}
