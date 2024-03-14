@@ -11,7 +11,7 @@ const BlogPostTemplate = ({ location, data }: PageProps<Queries.PostDetailQuery>
 
   return (
     <Layout location={location}>
-      <div style={{ padding: '60px 100px' }}>
+      <div style={{ padding: '60px 100px', width: 1000 }}>
         <PostHeader
           title={curPost?.frontmatter?.title || 'DEFAULT TITLE'}
           description={curPost?.frontmatter?.description || 'DEFAULT DESCRIPTION'}

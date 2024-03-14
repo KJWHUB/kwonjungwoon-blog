@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import { GatsbyImage, type IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, type IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 
 import {
@@ -32,6 +32,7 @@ const PostHeader = ({
   };
   tagList: string[];
 }) => {
+  const pImage = getImage(image);
   return (
     <header className={header}>
       <ul className={postHeaderTagList}>
@@ -50,9 +51,11 @@ const PostHeader = ({
       <hr className={dividingLine} />
 
       <div style={{ margin: '100px 0' }}>
-        <div className={postImageWrap}>
-          <GatsbyImage image={image} alt='Post image' objectFit='cover' className={postImage} />
-        </div>
+        {pImage && (
+          <div className={postImageWrap}>
+            <GatsbyImage image={pImage} alt='Post image' objectFit='cover' className={postImage} />
+          </div>
+        )}
         <p className={postImageCradit}>
           Photo Credit:{' '}
           <a href={credit.link} target='_blank' rel='noreferrer noopener'>
