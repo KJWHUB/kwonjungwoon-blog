@@ -17,15 +17,15 @@ const NavigationWrap = ({ location }: { location: Location }) => {
   console.log('location', location);
   const routes = [
     {
-      name: 'Blog',
+      name: 'BLOG',
       path: '/',
     },
     {
-      name: 'About',
+      name: 'ABOUT',
       path: '/about/',
     },
     {
-      name: 'Tags',
+      name: 'TAGS',
       path: '/tags/',
     },
   ];
