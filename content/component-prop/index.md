@@ -34,7 +34,7 @@ Vue 에서는 이것을 폴스루 속성 이라 지칭하며 사용되고 있다
 
 물론 이 옵션을 비활성화 하여 사용할수도 있다.
 
-```vue
+```js
 <script setup>
 defineOptions({
   inheritAttrs: false,

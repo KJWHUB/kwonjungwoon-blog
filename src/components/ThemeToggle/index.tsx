@@ -6,6 +6,7 @@ import { themeToggle } from './index.module.css';
 export type Theme = 'light' | 'dark';
 
 export const getLocalstorageTheme = () => {
+  if (typeof window === 'undefined') return 'light';
   return localStorage.getItem('theme') as Theme;
 };
 export const setLocalstorageTheme = (theme: Theme) => {
@@ -25,7 +26,7 @@ export const getSystemTheme = (): Theme => {
 };
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<Theme>(getLocalstorageTheme());
+  const [theme, setTheme] = useState<Theme>(getLocalstorageTheme() || 'light');
 
   const handleClick = () => {
     setTheme((prev) => {
