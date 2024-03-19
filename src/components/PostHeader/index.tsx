@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import { GatsbyImage, getImage, type IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 
+import { chageTagToPath } from '@/src/utils/path';
+
 import {
   dividingLine,
   header,
@@ -38,7 +40,7 @@ const PostHeader = ({
       <ul className={postHeaderTagList}>
         {tagList.map((tag) => (
           <li key={tag}>
-            <Link to={`/tags/${tag}`} className={postHeaderTagText}>
+            <Link to={`/tags/${chageTagToPath(tag)}`} className={postHeaderTagText}>
               {tag}
             </Link>
           </li>
