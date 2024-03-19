@@ -619,6 +619,12 @@ $content-image-max-height: 560px;
 .markdown kbd {
   display: inline-block;
   padding: 3px 5px;
+  font:
+    11px SFMono-Regular,
+    Consolas,
+    Liberation Mono,
+    Menlo,
+    monospace;
   line-height: 10px;
   color: #444d56;
   vertical-align: middle;
@@ -900,6 +906,12 @@ $content-image-max-height: 560px;
   min-width: 50px;
   padding-right: 10px;
   padding-left: 10px;
+  font-family:
+    SFMono-Regular,
+    Consolas,
+    Liberation Mono,
+    Menlo,
+    monospace;
   font-size: 12px;
   line-height: 20px;
   color: rgba(27, 31, 35, 0.3);
@@ -931,6 +943,12 @@ $content-image-max-height: 560px;
 
 .markdown .blob-code-inner {
   overflow: visible;
+  font-family:
+    SFMono-Regular,
+    Consolas,
+    Liberation Mono,
+    Menlo,
+    monospace;
   font-size: 12px;
   color: #24292e;
   word-wrap: normal;
@@ -1016,7 +1034,7 @@ $content-image-max-height: 560px;
   vertical-align: middle;
 }
 
-/* added for toc */
+// added for toc
 .markdown .table-of-contents {
   @media (max-width: 1400px) {
     display: none;
@@ -1051,7 +1069,7 @@ $content-image-max-height: 560px;
   }
 }
 
-/* added for image resizing */
+// added for image resizing
 .markdown .gatsby-resp-image-wrapper {
   display: flex !important;
   justify-content: center !important;
@@ -1067,7 +1085,7 @@ $content-image-max-height: 560px;
   }
 }
 
-/* caption */
+// caption
 .markdown .gatsby-resp-image-wrapper + em {
   display: block;
   text-align: center;
