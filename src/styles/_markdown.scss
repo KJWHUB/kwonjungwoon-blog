@@ -1034,7 +1034,7 @@ $content-image-max-height: 560px;
   vertical-align: middle;
 }
 
-// added for toc
+/* added for toc */
 .markdown .table-of-contents {
   @media (max-width: 1400px) {
     display: none;
@@ -1069,7 +1069,7 @@ $content-image-max-height: 560px;
   }
 }
 
-// added for image resizing
+/* added for image resizing */
 .markdown .gatsby-resp-image-wrapper {
   display: flex !important;
   justify-content: center !important;
@@ -1085,7 +1085,7 @@ $content-image-max-height: 560px;
   }
 }
 
-// caption
+/* caption */
 .markdown .gatsby-resp-image-wrapper + em {
   display: block;
   text-align: center;
