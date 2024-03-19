@@ -9,7 +9,6 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions, getNod
 
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `content` });
-    console.log('slug', slug);
     createNodeField({ node, name: `slug`, value: slug });
   }
 };
@@ -75,7 +74,6 @@ const createPost = ({
 
   edges.forEach(({ node }) => {
     const slug = node?.fields?.slug;
-    console.log('node', slug);
     createPage({
       path: `/post${slug}`,
       component: postTemplate,
