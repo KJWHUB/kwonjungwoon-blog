@@ -2,12 +2,11 @@ import { graphql, type PageProps } from 'gatsby';
 import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 
-// import Giscus from '@/src/components/Giscus';
 import PostHeader from '@/src/components/PostHeader';
 import Layout from '@/src/layout';
 
-const BlogPostTemplate = ({ location, data }: PageProps<Queries.PostDetailQuery>) => {
-  console.log('template props data', data);
+const BlogPostTemplate = ({ location, data, pageContext }: PageProps<Queries.PostDetailQuery>) => {
+  console.log('template props data', data, pageContext);
   const curPost = data.cur;
 
   return (
@@ -25,7 +24,6 @@ const BlogPostTemplate = ({ location, data }: PageProps<Queries.PostDetailQuery>
           tagList={(curPost?.frontmatter?.tag as string[]) || []}
         />
         <div className='markdown' dangerouslySetInnerHTML={{ __html: curPost?.html as string }} />
-        {/* <Giscus /> */}
       </div>
     </Layout>
   );
@@ -48,9 +46,6 @@ export const query = graphql`
         }
         post_image_credit_text
         post_image_credit_link
-      }
-      fields {
-        slug
       }
     }
   }

@@ -4,17 +4,14 @@ import path from 'path';
 
 import { chageTagToPath } from './src/utils/path';
 
-export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ getConfig, actions }) => {
-  const output = getConfig().output || {};
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
 
-  actions.setWebpackConfig({
-    output,
-    resolve: {
-      alias: {
-        '@/src': path.resolve(__dirname, 'src/'),
-      },
-    },
-  });
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `content` });
+    console.log('slug', slug);
+    createNodeField({ node, name: `slug`, value: slug });
+  }
 };
 
 type qCPQ = Queries.CreatePageQuery;
@@ -78,6 +75,7 @@ const createPost = ({
 
   edges.forEach(({ node }) => {
     const slug = node?.fields?.slug;
+    console.log('node', slug);
     createPage({
       path: `/post${slug}`,
       component: postTemplate,
@@ -97,7 +95,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         edges {
           node {
             id
-            excerpt(pruneLength: 500, truncate: true)
             fields {
               slug
             }
@@ -113,19 +110,26 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   `);
 
   if (result.errors || !result.data) {
+    reporter.warn(`createPages 에러 발생`);
     reporter.panicOnBuild(`There was an error loading your blog posts`, result.errors);
     return;
   }
 
   createPost({ createPage, edges: result.data.allMarkdownRemark.edges });
   createTags({ createPage, edges: result.data.allMarkdownRemark.edges });
+
+  reporter.success(`createPages 생성 완료`);
 };
 
-export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ getConfig, actions }) => {
+  const output = getConfig().output || {};
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `content` });
-    createNodeField({ node, name: `slug`, value: slug });
-  }
+  actions.setWebpackConfig({
+    output,
+    resolve: {
+      alias: {
+        '@/src': path.resolve(__dirname, 'src/'),
+      },
+    },
+  });
 };
