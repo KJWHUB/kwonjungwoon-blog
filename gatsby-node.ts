@@ -72,13 +72,17 @@ const createPost = ({
 }) => {
   const postTemplate = path.resolve(`./src/templates/blog-post/index.tsx`);
 
-  edges.forEach(({ node }) => {
+  edges.forEach(({ node, next, previous }) => {
     const slug = node?.fields?.slug;
+    const nextSlug = next?.fields?.slug ?? '';
+    const prevSlug = previous?.fields?.slug ?? '';
     createPage({
       path: `/post${slug}`,
       component: postTemplate,
       context: {
         slug,
+        nextSlug,
+        prevSlug,
       },
     });
   });
@@ -100,6 +104,16 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
               title
               date(formatString: "YYYY.MM.DD")
               tag
+            }
+          }
+          next {
+            fields {
+              slug
+            }
+          }
+          previous {
+            fields {
+              slug
             }
           }
         }

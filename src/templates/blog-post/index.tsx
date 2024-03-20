@@ -9,6 +9,8 @@ import Layout from '@/src/layout';
 const BlogPostTemplate = ({ location, data, pageContext }: PageProps<Queries.PostDetailQuery>) => {
   console.log('template props data', data, pageContext);
   const curPost = data.cur;
+  const nextPost = data.next;
+  const prevPost = data.prev;
 
   return (
     <Layout location={location}>
@@ -25,14 +27,14 @@ const BlogPostTemplate = ({ location, data, pageContext }: PageProps<Queries.Pos
           tagList={(curPost?.frontmatter?.tag as string[]) || []}
         />
         <div className='markdown' dangerouslySetInnerHTML={{ __html: curPost?.html as string }} />
-        <PostFooter />
+        <PostFooter navigationPosts={{ nextPost, prevPost }} />
       </div>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query PostDetail($slug: String) {
+  query PostDetail($slug: String, $nextSlug: String, $prevSlug: String) {
     cur: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
@@ -48,6 +50,28 @@ export const query = graphql`
         }
         post_image_credit_text
         post_image_credit_link
+      }
+    }
+
+    next: markdownRemark(fields: { slug: { eq: $nextSlug } }) {
+      id
+      frontmatter {
+        date(formatString: "YYYY.MM.DD")
+        title
+      }
+      fields {
+        slug
+      }
+    }
+
+    prev: markdownRemark(fields: { slug: { eq: $prevSlug } }) {
+      id
+      frontmatter {
+        date(formatString: "YYYY.MM.DD")
+        title
+      }
+      fields {
+        slug
       }
     }
   }

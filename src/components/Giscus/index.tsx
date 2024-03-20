@@ -21,7 +21,7 @@ const Giscus = () => {
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'top');
     script.setAttribute('data-theme', theme === 'dark' ? 'dark_dimmed' : 'light_protanopia');
-    script.setAttribute('data-lang', 'ko');
+    script.setAttribute('data-lang', 'en');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
 
