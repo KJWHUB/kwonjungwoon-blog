@@ -5,7 +5,7 @@ import PageTitle from '@/src/components/Typography/PageTitle';
 import Layout from '@/src/layout';
 import { classNames } from '@/src/utils/className';
 
-import { aboutContent, aboutWrap, contactContent, contactTitle, contactWrap, sectionWrap } from './style.module.scss';
+import { aboutWrap, contactContent, contactTitle, contactWrap, sectionWrap } from './style.module.scss';
 
 const AboutPage = ({ location, data }: PageProps<Queries.AboutPageQuery>) => {
   console.log('about', data);
