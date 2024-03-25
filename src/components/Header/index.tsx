@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import { Github } from 'lucide-react';
 import React from 'react';
 
+import useSiteMetadata from '@/src/hooks/useStaticQuery';
 import { classNames } from '@/src/utils/className';
 
 import ThemeToggle from '../ThemeToggle';
@@ -45,11 +46,14 @@ const NavigationWrap = ({ location }: { location: Location }) => {
 };
 
 const AddOnMenu = () => {
+  const metaData = useSiteMetadata();
+  const { github } = metaData.author.social;
+
   return (
     <menu>
       <ul className={listWrap}>
         <li>
-          <a href='https://github.com/KJWHUB' target='_blank' rel='noreferrer noopener'>
+          <a href={github} target='_blank' rel='noreferrer noopener'>
             <Github />
           </a>
         </li>

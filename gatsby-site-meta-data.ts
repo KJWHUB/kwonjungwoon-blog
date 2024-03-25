@@ -5,7 +5,7 @@ export default {
   language: `ko`,
   author: {
     name: `권중운`,
-    nickname: `ㄱㅈㅇ`,
+    nickname: `KJW`,
     stack: ['Frontend', 'Backend'],
     bio: {
       email: `art.1025p@gmail.com`,
