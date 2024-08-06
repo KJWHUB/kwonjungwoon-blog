@@ -1,12 +1,12 @@
 import { Link } from 'gatsby';
-import { Github } from 'lucide-react';
 import React from 'react';
 
 import useSiteMetadata from '@/src/hooks/useStaticQuery';
 import { classNames } from '@/src/utils/className';
 
+import { MdiGithub } from '../icons/MdiGithub';
 import ThemeToggle from '../ThemeToggle';
-import { active, header, headerWrap, listItem, listWrap } from './style.module.scss';
+import { active, githubIcon, header, headerWrap, listItem, listItemAddOn, listWrap } from './style.module.scss';
 
 const isPathActive = (pathname: string, path: string) => {
   if (path === '/') return pathname === path;
@@ -52,9 +52,9 @@ const AddOnMenu = () => {
   return (
     <menu>
       <ul className={listWrap}>
-        <li>
+        <li className={listItemAddOn}>
           <a href={github} target='_blank' rel='noreferrer noopener'>
-            <Github />
+            <MdiGithub className={githubIcon} />
           </a>
         </li>
         <li>
