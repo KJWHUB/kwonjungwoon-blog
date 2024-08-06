@@ -10,7 +10,7 @@ import { aboutWrap, contactContent, contactTitle, contactWrap, sectionWrap } fro
 const AboutPage = ({ location, data }: PageProps<Queries.AboutPageQuery>) => {
   console.log('about', data);
   const email = data.site?.siteMetadata?.author?.bio?.email as string;
-  const nickname = data.site?.siteMetadata?.author?.nickname as string;
+  const name = data.site?.siteMetadata?.author?.name as string;
   const github = data.site?.siteMetadata?.author?.social?.github as string;
 
   const contactList: {
@@ -30,7 +30,7 @@ const AboutPage = ({ location, data }: PageProps<Queries.AboutPageQuery>) => {
     <Layout location={location}>
       <section className={classNames(sectionWrap, aboutWrap)}>
         <PageTitle text={'About'} />
-        <p>안녕하세요. 개발자 {nickname} 입니다.</p>
+        <p>안녕하세요. 개발자 {name} 입니다.</p>
         <p>개발하며 얻는 지식들을 기록하기 위한 사이트 입니다.</p>
       </section>
 
