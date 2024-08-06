@@ -17,24 +17,26 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   return (
     <div>
       {location && <Header location={location} />}
-      <HomeBackground>
-        <p
-          style={{
-            color: 'white',
-            fontSize: '6rem',
-            fontWeight: 400,
-            letterSpacing: '0.5em',
-            lineHeight: '1.5',
-            textAlign: 'center',
-            backdropFilter: 'blur(1px)',
-            borderRadius: '50px',
-            paddingLeft: '1rem',
-            opacity: 0.8,
-          }}
-        >
-          {TITLE}
-        </p>
-      </HomeBackground>
+      {location.pathname === '/' && (
+        <HomeBackground>
+          <p
+            style={{
+              color: 'white',
+              fontSize: '6rem',
+              fontWeight: 400,
+              letterSpacing: '0.5em',
+              lineHeight: '1.5',
+              textAlign: 'center',
+              backdropFilter: 'blur(1px)',
+              borderRadius: '50px',
+              paddingLeft: '1rem',
+              opacity: 0.8,
+            }}
+          >
+            {TITLE}
+          </p>
+        </HomeBackground>
+      )}
       <main className={container}>{children}</main>
       <Footer />
     </div>
