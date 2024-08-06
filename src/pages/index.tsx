@@ -10,8 +10,6 @@ const IndexPage = ({ location, data }: PageProps<Queries.PostListQuery>) => {
   const list = data.allMarkdownRemark.edges;
   return (
     <Layout location={location}>
-      <h1 style={{ margin: '200px 0' }}>Home Page</h1>
-
       <PostCardList list={list} />
     </Layout>
   );

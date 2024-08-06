@@ -1,0 +1,24 @@
+.home-background {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 900px;
+
+  color: var(--body-background-color);
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    inset: 0 0 auto;
+    display: block;
+    height: 100%;
+    background: linear-gradient(rgb(0 0 0 / 0) 60%, var(--body-background-color));
+  }
+}
