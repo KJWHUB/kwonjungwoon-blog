@@ -12,29 +12,38 @@ type LayoutProps = {
   location: Location;
 };
 
-const Layout: React.FC<LayoutProps> = ({ children, location }) => {
+const TitleComponent = () => {
   const TITLE = 'POST';
+  return (
+    <p
+      style={{
+        color: 'white',
+        fontSize: '6rem',
+        fontWeight: 400,
+        letterSpacing: '0.5em',
+        lineHeight: '1.5',
+        textAlign: 'center',
+        backdropFilter: 'blur(1px)',
+        borderRadius: '50px',
+        paddingLeft: '1rem',
+        opacity: 0.8,
+      }}
+    >
+      {[...TITLE].map((letter, index) => (
+        // 플립 애니메이션을 위한 span 태그
+        <span key={index}>{letter}</span>
+      ))}
+    </p>
+  );
+};
+
+const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   return (
     <div>
       {location && <Header location={location} />}
       {location.pathname === '/' && (
         <HomeBackground>
-          <p
-            style={{
-              color: 'white',
-              fontSize: '6rem',
-              fontWeight: 400,
-              letterSpacing: '0.5em',
-              lineHeight: '1.5',
-              textAlign: 'center',
-              backdropFilter: 'blur(1px)',
-              borderRadius: '50px',
-              paddingLeft: '1rem',
-              opacity: 0.8,
-            }}
-          >
-            {TITLE}
-          </p>
+          <TitleComponent />
         </HomeBackground>
       )}
       <main className={container}>{children}</main>
